@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | HavenStay</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h2>HavenStay</h2>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Booking Section -->
+    <main class="booking-section">
+
+        <div class="booking-heading">
+            <p class="subtitle">YOUR NEXT ESCAPE</p>
+            <h1>Book Your Stay</h1>
+            <p>Complete the form below to request your reservation.</p>
+        </div>
+
+        <form id="bookingForm">
+
+            <h2>Guest Information</h2>
+
+            <div class="form-group">
+                <label for="guestName">Full Name</label>
+                <input type="text" id="guestName"
+                       placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guestEmail">Email Address</label>
+                <input type="email" id="guestEmail"
+                       placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guestPhone">Phone Number</label>
+                <input type="tel" id="guestPhone"
+                       placeholder="Enter your phone number" required>
+            </div>
+
+            <hr>
+
+            <h2>Reservation Details</h2>
+
+            <div class="form-group">
+                <label for="roomType">Select Room</label>
+
+                <select id="roomType" required>
+                    <option value="">Choose a room</option>
+
+                    <option value="5000">Classic Room - KSh 5,000</option>
+                    <option value="6000">Twin Room - KSh 6,000</option>
+                    <option value="8000">Deluxe Room - KSh 8,000</option>
+                    <option value="12000">Executive Suite - KSh 12,000</option>
+                    <option value="20000">Presidential Suite - KSh 20,000</option>
+                    <option value="25000">Penthouse Suite - KSh 25,000</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="checkIn">Check-in Date</label>
+                    <input type="date" id="checkIn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkOut">Check-out Date</label>
+                    <input type="date" id="checkOut" required>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+
+                <input type="number" id="guests"
+                       min="1" max="10" value="1" required>
+            </div>
+
+            <!-- Price Summary -->
+            <div class="price-summary">
+
+                <h3>Booking Summary</h3>
+
+                <p>Price per night:
+                    <span id="nightPrice">KSh 0</span>
+                </p>
+
+                <p>Number of nights:
+                    <span id="nightCount">0</span>
+                </p>
+
+                <h2>Total:
+                    <span id="totalPrice">KSh 0</span>
+                </h2>
+
+            </div>
+
+            <button type="submit" class="booking-button">
+                Submit Booking Request
+            </button>
+
+            <p id="bookingMessage" role="status"></p>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 HavenStay. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

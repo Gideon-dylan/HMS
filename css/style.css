@@ -1,0 +1,649 @@
+
+/* =================================
+   1. GLOBAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =================================
+   2. HEADER AND NAVIGATION
+================================= */
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 10;
+}
+
+nav {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    gap: 20px;
+}
+
+.logo {
+    color: #263b36;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #333333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #b58b50;
+}
+
+
+/* =================================
+   3. HOMEPAGE HERO SECTION
+================================= */
+
+.hero {
+    min-height: 420px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.55),
+                        rgba(0, 0, 0, 0.55)),
+        url("https://images.unsplash.com/photo-1566073771259-6a8506099945");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero a,
+.about-text a {
+    display: inline-block;
+    background-color: #b58b50;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero a:hover,
+.about-text a:hover {
+    background-color: #96703d;
+}
+
+
+/* =================================
+   4. FEATURED ROOMS
+================================= */
+
+.featured-rooms {
+    padding: 55px 5%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    color: #263b36;
+}
+
+.section-heading p {
+    color: #777777;
+}
+
+
+/* =================================
+   5. ROOM CARDS AND IMAGES
+================================= */
+
+.room-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.room-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+}
+
+.room-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.room-card h3 {
+    color: #263b36;
+    padding: 12px 15px 5px;
+}
+
+.room-card p {
+    padding: 0 15px 12px;
+    color: #666666;
+}
+
+.room-card a {
+    display: inline-block;
+    margin: 0 15px 18px;
+    padding: 9px 18px;
+    background-color: #b58b50;
+    color: white;
+    border-radius: 5px;
+}
+
+.room-card a:hover {
+    background-color: #96703d;
+}
+
+
+/* =================================
+   6. ROOM SEARCH
+================================= */
+
+#roomSearch {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding: 13px;
+    margin: 25px auto;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+#roomSearch:focus {
+    border-color: #b58b50;
+}
+
+#noResults {
+    text-align: center;
+    color: #c0392b;
+    margin: 20px 0;
+}
+
+
+/* =================================
+   7. ROOMS CATALOGUE PAGE
+================================= */
+
+.rooms-banner {
+    background-color: #263b36;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.rooms-banner h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.catalogue {
+    padding: 45px 5%;
+}
+
+.catalogue h2 {
+    text-align: center;
+    color: #263b36;
+    margin-bottom: 20px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 1px solid #b58b50;
+    background-color: white;
+    color: #333333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #b58b50;
+    color: white;
+}
+
+
+/* =================================
+   8. BOOKING PAGE
+================================= */
+
+.booking-section {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.booking-section h1 {
+    text-align: center;
+    color: #263b36;
+    margin-bottom: 10px;
+}
+
+.booking-section > p {
+    text-align: center;
+    color: #777777;
+    margin-bottom: 30px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #b58b50;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.booking-summary {
+    background-color: #f7f5f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.booking-summary h3 {
+    color: #263b36;
+    margin-bottom: 12px;
+}
+
+.booking-summary p {
+    margin: 8px 0;
+}
+
+.submit-btn {
+    background-color: #b58b50;
+    color: white;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #96703d;
+}
+
+#bookingMessage {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* =================================
+   9. ABOUT PAGE
+================================= */
+
+.about-banner {
+    background-color: #263b36;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.about-banner h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.about-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 8%;
+}
+
+.about-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.about-text h2 {
+    color: #263b36;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-text a {
+    margin-top: 10px;
+}
+
+.mission-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 45px 8%;
+    background-color: #f7f5f0;
+}
+
+.mission-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.mission-card h2 {
+    color: #b58b50;
+    margin-bottom: 12px;
+}
+
+.facilities-section {
+    padding: 55px 5%;
+    text-align: center;
+}
+
+.facilities-section h2 {
+    color: #263b36;
+    margin-bottom: 30px;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.facility-card {
+    padding: 25px 15px;
+    background-color: #f7f5f0;
+    border-radius: 8px;
+}
+
+.facility-card h3 {
+    color: #263b36;
+    margin-bottom: 10px;
+}
+
+
+/* =================================
+   10. CONTACT PAGE
+================================= */
+
+.contact-banner {
+    background-color: #263b36;
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.contact-banner h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    padding: 60px 8%;
+}
+
+.contact-info h2,
+.contact-form-container h2 {
+    margin-bottom: 20px;
+    color: #263b36;
+}
+
+.contact-info > p {
+    margin-bottom: 30px;
+}
+
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-item h3 {
+    margin-bottom: 8px;
+    color: #b58b50;
+}
+
+.contact-form-container {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    outline: none;
+    border-color: #b58b50;
+}
+
+#contactFeedback {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+/* =================================
+   11. FOOTER
+================================= */
+
+footer {
+    background-color: #263b36;
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+    margin-top: 30px;
+}
+
+
+/* =================================
+   12. RESPONSIVE DESIGN
+================================= */
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .room-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* MOBILE PHONES */
+
+@media (max-width: 550px) {
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 350px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .room-container {
+        grid-template-columns: 1fr;
+    }
+
+    .room-card img {
+        height: 200px;
+    }
+
+    .about-story,
+    .mission-section,
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 35px 5%;
+    }
+
+    .about-image img {
+        height: 230px;
+    }
+
+    .facilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .booking-section {
+        margin: 25px 12px;
+        padding: 22px;
+    }
+
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .rooms-banner h1,
+    .about-banner h1,
+    .contact-banner h1 {
+        font-size: 28px;
+    }
+}
